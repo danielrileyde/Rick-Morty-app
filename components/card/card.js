@@ -1,8 +1,8 @@
-const liElement = document.createElement("li");
-liElement.classList.add("card");
-
 export function createCharacterCard(randomCharacter) {
-  liElement.innerHTML += `
+  const liElement = document.createElement("li");
+  liElement.classList.add("card");
+
+  liElement.innerHTML = `
     <div class="card__image-container">
               <img
                 class="card__image"
