@@ -1,9 +1,8 @@
-const cardContainer = document.querySelectorAll('[data-js="card-container"]');
 const liElement = document.createElement("li");
 liElement.classList.add("card");
 
 export function createCharacterCard(randomCharacter) {
-  liElement.innerHTML = `
+  liElement.innerHTML += `
     <div class="card__image-container">
               <img
                 class="card__image"
@@ -20,7 +19,7 @@ export function createCharacterCard(randomCharacter) {
                 <dt class="card__info-title">Type</dt>
                 <dd class="card__info-description">${randomCharacter.type}</dd>
                 <dt class="card__info-title">Occurrences</dt>
-                <dd class="card__info-description">${randomCharacter.occurances}</dd>
+                <dd class="card__info-description">${randomCharacter["episode"].length}</dd>
               </dl>
             </div>
     `;
