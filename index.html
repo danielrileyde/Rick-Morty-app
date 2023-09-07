@@ -8,10 +8,17 @@
     />
     <title>Rick and Morty Character Log</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1 class="title">Rick and More</h1>
-    <main>
+    <header>
+      <a href=""><h1 class="title">Rick and More</h1></a>
+
       <div class="search-bar-container" data-js="search-bar-container">
         <form action="" class="search-bar" data-js="search-bar">
           <input
@@ -30,14 +37,15 @@
           </button>
         </form>
       </div>
+    </header>
+
+    <main>
       <ul class="card-container" data-js="card-container"></ul>
     </main>
     <nav class="navigation" data-js="navigation">
-      <button class="button button--prev" data-js="button-prev">
-        previous
-      </button>
+      <button class="button button--prev" data-js="button-prev">←</button>
       <span class="navigation__pagination" data-js="pagination">1 / 1</span>
-      <button class="button button--next" data-js="button-next">next</button>
+      <button class="button button--next" data-js="button-next">→</button>
     </nav>
   </body>
   <script type="module" src="./index.js"></script>

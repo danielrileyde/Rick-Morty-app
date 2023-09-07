@@ -7,26 +7,56 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 :root {
   --color-primary: rgb(51, 51, 51);
   --color-secondary: #f6f6f6;
-  --font-family: system-ui;
+  --font-headline: "Climate Crisis";
+  --font-body: "Space Grotesk";
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-headline);
+  background-color: #000000;
   color: var(--color-primary);
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
+  display: flex;
+  width: 100%;
+}
+
+header {
+  background-color: rgb(198, 198, 198);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
 }
 
 .title {
   padding: 10px 0;
+  font-family: var(--font-headline);
+  color: rgb(23, 23, 23);
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
