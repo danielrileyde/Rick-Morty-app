@@ -22,24 +22,22 @@ const searchOnCharacters = (e) => {
 };
 
 const prevClick = () => {
-  page--;
-  fetchCharacters();
-  if (page <= 1) {
-    prevButton.disabled = true;
-  } else if (page > 1) {
+  if (page > 1) {
+    page--;
+    fetchCharacters();
     nextButton.disabled = false;
+    window.scrollTo(0, 0);
   } else {
     return null;
   }
 };
 
 const nextClick = () => {
-  page++;
-  fetchCharacters();
-  if (page === maxPage) {
-    nextButton.disabled = true;
-  } else if (page <= maxPage) {
+  if (page <= maxPage) {
+    page++;
+    fetchCharacters();
     prevButton.disabled = false;
+    window.scrollTo(0, 0);
   } else {
     return null;
   }
@@ -80,13 +78,19 @@ const fetchCharacters = async () => {
       return cardContainer.append(createdCard);
     });
     pagination.innerHTML = `${page}/${maxPage}`;
+
+    if (page === 1) {
+      prevButton.disabled = true;
+    } else if (page === maxPage) {
+      nextButton.disabled = true;
+    }
   } catch (error) {
     console.error("error is ", error);
     if (error) {
       console.log(`Searched name ${searchQuery} does't exist!`);
       cardContainer.innerHTML = " ";
+      navigation.innerHTML = "";
       const pElement = document.createElement("p");
-
       pElement.textContent = `Searched Character "${searchQuery}" doesn't exist!`;
       cardContainer.append(pElement);
     }

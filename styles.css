@@ -17,6 +17,10 @@
   --font-body: "Space Grotesk";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-headline);
   background-color: #000000;
