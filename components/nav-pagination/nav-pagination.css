@@ -4,6 +4,7 @@
   grid-template-columns: 100px 100px 100px;
   justify-content: center;
   color: aliceblue;
+  margin-top: 30px;
 }
 
 .navigation__pagination {
