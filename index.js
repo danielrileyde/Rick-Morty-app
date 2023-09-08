@@ -43,6 +43,20 @@ const nextClick = () => {
   }
 };
 
+const handleError = () => {
+  cardContainer.innerHTML = "";
+  navigation.innerHTML = "";
+  const pElement = document.createElement("p");
+  const imgElement = document.createElement("img");
+  pElement.textContent = `Searched Character "${searchQuery}" doesn't exist!`;
+  imgElement.setAttribute(
+    "src",
+    "https://shots.codepen.io/username/pen/ZjLwYz-800.jpg?version=1532655820"
+  );
+  cardContainer.append(pElement);
+  cardContainer.append(imgElement);
+};
+
 const searchBar = createSearchBar(searchOnCharacters);
 searchBarContainer.append(searchBar);
 const prevButton = createButton("button--prev", "button-prev", "←", prevClick);
@@ -59,9 +73,7 @@ const fetchCharacters = async () => {
     const data = await response.json();
     maxPage = data.info.pages;
     const requiredData = data.results;
-
     cardContainer.innerHTML = "";
-
     requiredData.map((character) => {
       const createdCard = createCharacterCard(character);
       return cardContainer.append(createdCard);
@@ -74,20 +86,10 @@ const fetchCharacters = async () => {
       nextButton.disabled = true;
     }
   } catch (error) {
-    console.error("error is ", error);
     if (error) {
-      console.log(`Searched name ${searchQuery} does't exist!`);
-      cardContainer.innerHTML = " ";
-      navigation.innerHTML = "";
-      const pElement = document.createElement("p");
-      const imgElement = document.createElement("img");
-      pElement.textContent = `Searched Character "${searchQuery}" doesn't exist!`;
-      imgElement.setAttribute(
-        "src",
-        "https://media.giphy.com/media/tJqyalvo9ahykfykAj/giphy.gif"
-      );
-      cardContainer.append(pElement);
-      cardContainer.append(imgElement);
+      handleError();
+    } else {
+      return null;
     }
   }
 };
