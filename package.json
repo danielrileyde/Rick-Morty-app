@@ -9,5 +9,8 @@
   },
   "nf": {
     "template": "html-css-js-static"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }

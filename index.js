@@ -47,22 +47,11 @@ const nextClick = () => {
 
 const searchBar = createSearchBar(searchOnCharacters);
 searchBarContainer.append(searchBar);
-const prevButton = createButton(
-  "button--prev",
-  "button-prev",
-  "previous",
-  prevClick
-);
-
+const prevButton = createButton("button--prev", "button-prev", "←", prevClick);
 navigation.append(prevButton);
 const pagination = createPagination(page, maxPage);
 navigation.append(pagination);
-const nextButton = createButton(
-  "button--next",
-  "button-next",
-  "next",
-  nextClick
-);
+const nextButton = createButton("button--next", "button-next", "→", nextClick);
 navigation.append(nextButton);
 
 const fetchCharacters = async () => {
