@@ -80,8 +80,14 @@ const fetchCharacters = async () => {
       cardContainer.innerHTML = " ";
       navigation.innerHTML = "";
       const pElement = document.createElement("p");
+      const imgElement = document.createElement("img");
       pElement.textContent = `Searched Character "${searchQuery}" doesn't exist!`;
+      imgElement.setAttribute(
+        "src",
+        "https://media.giphy.com/media/tJqyalvo9ahykfykAj/giphy.gif"
+      );
       cardContainer.append(pElement);
+      cardContainer.append(imgElement);
     }
   }
 };
