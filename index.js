@@ -51,7 +51,7 @@ const handleError = () => {
   pElement.textContent = `Searched Character "${searchQuery}" doesn't exist!`;
   imgElement.setAttribute(
     "src",
-    "https://shots.codepen.io/username/pen/ZjLwYz-800.jpg?version=1532655820"
+    "https://media.giphy.com/media/tJqyalvo9ahykfykAj/giphy.gif"
   );
   cardContainer.append(pElement);
   cardContainer.append(imgElement);
